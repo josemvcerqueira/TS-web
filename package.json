@@ -1,5 +1,12 @@
 {
   "devDependencies": {
+    "prettier": "^1.18.2",
     "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "rambda": "^2.14.0"
+  },
+  "scripts": {
+    "start": "parcel index.html"
   }
 }
