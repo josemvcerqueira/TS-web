@@ -1,17 +1,18 @@
-import { merge, append } from "rambda";
+import axios, { AxiosResponse } from "axios";
+import { merge } from "rambda";
+
+import { Eventing } from "./Eventing";
 
 interface UserProps {
   name?: string;
   age?: number;
+  id?: number;
 }
 
-type callback = () => void;
-
 export class User {
-  // if you do not know the key of the {} that's how you do it
-  events: { [key: string]: callback[] } = {};
-
   constructor(private data: UserProps) {}
+
+  public events: Eventing = new Eventing();
 
   get(propName: string): number | string {
     return this.data[propName];
@@ -21,8 +22,17 @@ export class User {
     this.data = merge(this.data, update);
   }
 
-  on(eventName: string, cb: callback): void {
-    const handlers = this.events[eventName] || [];
-    this.events[eventName] = append(cb, handlers);
+  async fetch(): Promise<void> {
+    const response: AxiosResponse = await axios.get(
+      `http://localhost:3000/users/${this.get("id")}`
+    );
+    this.set(response.data);
+  }
+
+  save(): void {
+    const id = this.get("id");
+
+    if (id) axios.put(`http://localhost:3000/users/${id}`, this.data);
+    else axios.post(`http://localhost:3000/users/`, this.data);
   }
 }

@@ -1,9 +1,9 @@
 import { User } from "./models/User";
 
-const user = new User({ name: "Jose", age: 28 });
+const user = new User({ name: "new record", age: 0 });
 
-user.on("change", () => {});
-user.on("change", () => {});
-user.on("click", () => {});
+user.events.on("change", () => {
+  console.log("I CHANGED");
+});
 
-console.log(user);
+user.events.trigger("change");

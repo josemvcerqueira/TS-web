@@ -4,9 +4,12 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "axios": "^0.19.0",
+    "json-server": "^0.15.0",
     "rambda": "^2.14.0"
   },
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "start:db": "json-server -w db.json"
   }
 }
