@@ -1,38 +1,33 @@
-import axios, { AxiosResponse } from "axios";
-import { merge } from "rambda";
-
+import { Sync } from "./Sync";
 import { Eventing } from "./Eventing";
+import { Attributes } from "./Attributes";
 
-interface UserProps {
+export interface UserProps {
   name?: string;
   age?: number;
   id?: number;
 }
 
+const rootUrl = "http://localhost:3000/users";
+
 export class User {
-  constructor(private data: UserProps) {}
-
   public events: Eventing = new Eventing();
+  public sync: Sync<UserProps> = new Sync<UserProps>(rootUrl);
+  public attributes: Attributes<UserProps>;
 
-  get(propName: string): number | string {
-    return this.data[propName];
+  constructor(attrs: UserProps) {
+    this.attributes = new Attributes<UserProps>(attrs);
   }
 
-  set(update: UserProps): void {
-    this.data = merge(this.data, update);
+  get on() {
+    return this.events.on;
   }
 
-  async fetch(): Promise<void> {
-    const response: AxiosResponse = await axios.get(
-      `http://localhost:3000/users/${this.get("id")}`
-    );
-    this.set(response.data);
+  get trigger() {
+    return this.events.trigger;
   }
 
-  save(): void {
-    const id = this.get("id");
-
-    if (id) axios.put(`http://localhost:3000/users/${id}`, this.data);
-    else axios.post(`http://localhost:3000/users/`, this.data);
+  get get() {
+    return this.attributes.get;
   }
 }
