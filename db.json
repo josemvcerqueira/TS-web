@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "NEW NAME",
-      "age": 1
+      "name": "jose",
+      "age": 0
     },
     {
       "name": "new record",
@@ -14,61 +14,6 @@
       "name": "new record",
       "age": 0,
       "id": 3
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 4
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 5
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 6
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 7
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 8
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 9
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 10
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 11
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 12
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 13
-    },
-    {
-      "name": "new record",
-      "age": 0,
-      "id": 14
     }
   ]
 }

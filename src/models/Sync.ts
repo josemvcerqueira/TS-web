@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AxiosResponse } from "axios";
 
 interface HasId {
   id?: number;
@@ -7,7 +8,7 @@ interface HasId {
 export class Sync<T extends HasId> {
   constructor(public rootUrl: string) {}
 
-  async fetch(id: number): Promise<void> {
+  async fetch(id: number): Promise<AxiosResponse> {
     return axios.get(`${this.rootUrl}/${id}`);
   }
 
