@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0df26576-c7ed-458a-88eb-dce96b8a24af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/models/Collection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Attributes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Attributes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Sync.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Sync.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Sync.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ApiSync.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/User.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,7 +44,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RunDashboard">
@@ -73,6 +73,8 @@
       <workItem from="1565297038009" duration="5021000" />
       <workItem from="1565330175991" duration="4552000" />
       <workItem from="1565364281782" duration="4076000" />
+      <workItem from="1565448389282" duration="30000" />
+      <workItem from="1565448432607" duration="3974000" />
     </task>
     <servers />
   </component>
