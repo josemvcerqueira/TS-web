@@ -1,14 +1,13 @@
 import axios, { AxiosResponse } from "axios";
 import { forEach, append } from "rambda";
 
-import { User, UserProps } from "./User";
 import { Eventing } from "./Eventing";
 
-class Collection {
-  models: User[] = [];
+class Collection<T, K> {
+  models: T[] = [];
   events: Eventing = new Eventing();
 
-  constructor(public rootUrl: string) {}
+  constructor(public rootUrl: string, public deserialize: (json: K) => T) {}
 
   get on() {
     return this.events.on;
@@ -20,9 +19,8 @@ class Collection {
 
   async fetch(): Promise<void> {
     const response = await axios.get(this.rootUrl);
-    const getDataFrom = forEach((value: UserProps) => {
-      const user = User.build(value);
-      this.models = append(user, this.models);
+    const getDataFrom = forEach((value: K) => {
+      this.models = append(this.deserialize(value), this.models);
     });
 
     getDataFrom(response.data);
